@@ -15,6 +15,10 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        'App\Events\ApplicationUpdatedByUser' => [
+            'App\Listeners\UpdatePwa'
+        ],
+
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
